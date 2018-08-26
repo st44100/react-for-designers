@@ -3,8 +3,8 @@
 
 ## Set up
 
-- [Install Node.js](#Install\ Node.js)
-- [Install VSCode](#Install\ VSCode) (Editor)
+- [Install Node.js](#Install-Node.js)
+- [Install VSCode](#Install-VSCode) (Editor)
 
 ### Install Node.js
 
