@@ -9,3 +9,11 @@ export function randomInt(max = 0, min = 0) {
   min = min > 0 ? min : 0;
   return Math.floor(Math.random() * Math.floor(max - min)) + min;
 }
+
+/**
+ * Generate random hsl color
+ * @return {string} CSS color. hsl(x, x, x).
+ */
+export function randomHslColor() {
+  return `hsl(${randomInt(360)}, ${randomInt(100)}%, ${randomInt(100)}%)`;
+}

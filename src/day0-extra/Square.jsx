@@ -12,7 +12,6 @@ const Div = styled.div`
   background-color: ${(props) => props.fill };
 `;
 
-
 const Square = (props) => (
   <Div {...props} />
 );
