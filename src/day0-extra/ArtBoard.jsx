@@ -15,23 +15,6 @@ function range(range = 0) {
   return Array.from(Array(range).keys())
 }
 
-const compositions = range(100).map((i) => ({
-  x: randomInt(10, 500),
-  y: randomInt(10, 500),
-  w: randomInt(10, 100),
-  h: randomInt(10, 100),
-  stroke: '#888',
-  fill: randomHslColor(0, 50, 50)
-}));
-
-const square_composition = range(100).map((i) => ({
-  x: randomInt(10, 500),
-  y: randomInt(10, 500),
-  size: randomInt(10, 100),
-  stroke: '#888',
-  fill: randomHslColor(0, 50, 50)
-}));
-
 const StyledDiv = styled.div`
   position: relative;
   width: 100%;
@@ -39,19 +22,51 @@ const StyledDiv = styled.div`
   mih-height: 500px;
 `;
 
-const ArtBoard = () => (
-  <div>
-    {
-      compositions.map((c) => (
-        <Rect {...c}/>
-      ))
-    }
-    {
-      square_composition.map((c) => (
-        <Square {...c}/>
-      ))
-    }
-  </div>
-);
+const ArtBoard = (props) => {
+  const {
+    numOfRects,
+    numOfSquares,
+    squareSizeMin,
+    squareSizeMax,
+    hueMin,
+    hueMax,
+    saturationMin,
+    saturationMax,
+    lightnessMin,
+    lightnessMax,
+  } = props;
+
+  const compositions = range(numOfRects).map((i) => ({
+    x: randomInt(10, 500),
+    y: randomInt(10, 500),
+    w: randomInt(10, 100),
+    h: randomInt(10, 100),
+    stroke: '#888',
+    fill: randomHslColor(hueMax, hueMin, saturationMax, saturationMin, lightnessMax, lightnessMin)
+  }));
+
+  const square_composition = range(numOfSquares).map((i) => ({
+    x: randomInt(10, 500),
+    y: randomInt(10, 500),
+    size: randomInt(squareSizeMin, squareSizeMax),
+    stroke: '#888',
+    fill: randomHslColor(hueMax, hueMin, saturationMax, saturationMin, lightnessMax, lightnessMin)
+  }));
+
+  return (
+    <StyledDiv>
+      {
+        compositions.map((c) => (
+          <Rect {...c}/>
+        ))
+      }
+      {
+        square_composition.map((c) => (
+          <Square {...c}/>
+        ))
+      }
+    </StyledDiv>
+  );
+};
 
 export default ArtBoard;

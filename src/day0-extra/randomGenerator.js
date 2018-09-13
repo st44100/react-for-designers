@@ -20,6 +20,13 @@ export function randomInt(max = 0, min = 0) {
  * @params {Number} minL. Min bias for L.
  * @return {string} CSS color. hsl(x, x, x).
  */
-export function randomHslColor(minH = 0, minS = 0, minL = 0) {
-  return `hsl(${randomInt(360, minH)}, ${randomInt(100, minS)}%, ${randomInt(100, minL)}%)`;
+export function randomHslColor(
+  minH = 0,
+  maxH = 360,
+  minS = 0,
+  maxS = 100,
+  minL = 0,
+  maxL = 100
+  ) {
+  return `hsl(${randomInt(maxH, minH)}, ${randomInt(maxS, minS)}%, ${randomInt(maxL, minL)}%)`;
 }
