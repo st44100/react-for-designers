@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Rect from './Rect';
 import Square from './Square';
+
 import { randomInt, randomHslColor } from './randomGenerator';
 
 /**
@@ -20,7 +21,7 @@ const compositions = range(100).map((i) => ({
   w: randomInt(10, 100),
   h: randomInt(10, 100),
   stroke: '#888',
-  fill: randomHslColor()
+  fill: randomHslColor(0, 50, 50)
 }));
 
 const square_composition = range(100).map((i) => ({
@@ -28,7 +29,7 @@ const square_composition = range(100).map((i) => ({
   y: randomInt(10, 500),
   size: randomInt(10, 100),
   stroke: '#888',
-  fill: randomHslColor()
+  fill: randomHslColor(0, 50, 50)
 }));
 
 const StyledDiv = styled.div`
