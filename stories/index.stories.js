@@ -7,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import Welcome from '../src/day0/Welcome';
 import MyButton from '../src/day0/MyButton';
 import MyButtonTwo from '../src/day0/MyButtonTwo';
-import ArtBoard from '../src/day0-extra/sketch';
+import ArtBoard from '../src/day0-extra/ArtBoard';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome />);
 
