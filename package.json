@@ -6,10 +6,13 @@
   "author": "st44100 <st44100@gmail.com>",
   "license": "CC BY-SA",
   "dependencies": {
+    "@sambego/storybook-state": "^1.2.0",
     "mdx": "^0.3.1",
+    "rc-slider": "^8.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "styled-components": "^3.4.5"
+    "styled-components": "^3.4.5",
+    "throttle-debounce": "^2.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
